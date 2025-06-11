@@ -1,116 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LM JOGOS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .game-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .game-item {
-            width: 150px;
-            text-align: center;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .game-item img {
-            width: 100%;
-            height: auto;
-            border-bottom: 2px solid #4CAF50;
-        }
-
-        .game-item a {
-            display: block;
-            padding: 10px;
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #f3f3f3;
-            border-top: 1px solid #ddd;
-        }
-
-        .download-btn {
-            display: block;
-            text-align: center;
-            margin: 20px;
-            padding: 15px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .ads-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LM JOGOS</title>
+  <script async src="https://ads.instal.com/servead/adsbyinstal.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #ffcc00, #ff0066);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-download {
+      background: #00ffcc;
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .ads-container {
+      margin: 2rem auto;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 200px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background-color: rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>LM JOGOS</h1>
-        <p>Jogue os melhores jogos diretamente no seu navegador!</p>
-    </header>
+  <header>
+    <h1>LM JOGOS</h1>
+    <p>Bem-vindo ao seu universo de jogos!</p>
+    <button class="btn-download">Baixar App</button>
 
-    <div class="game-gallery">
-        <div class="game-item">
-            <img src="https://via.placeholder.com/150" alt="Jogo 1">
-            <a href="https://www.exemplo.com/jogo1">Jogo 1</a>
-        </div>
-        <div class="game-item">
-            <img src="https://via.placeholder.com/150" alt="Jogo 2">
-            <a href="https://www.exemplo.com/jogo2">Jogo 2</a>
-        </div>
-        <div class="game-item">
-            <img src="https://via.placeholder.com/150" alt="Jogo 3">
-            <a href="https://www.exemplo.com/jogo3">Jogo 3</a>
-        </div>
-    </div>
-
-    <!-- Botão de Download -->
-    <a href="#" class="download-btn">Baixe o App Agora</a>
-
-    <!-- Anúncio -->
     <div class="ads-container">
-        <dfn class="adsbyinstal" data-instalad-slot-type="default" data-instalad-slotid="2009" style="display:inline-block;width:320px;height:250px"></dfn>
-        <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
-        <script async src="https://ads.instal.com/servead/adsbyinstal.js"></script>
+      <dfn class="adsbyinstal"
+           data-instalad-slot-type="default"
+           data-instalad-slotid="6113"
+           style="display:inline-block;width:320px;height:480px"></dfn>
+      <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2025 LM JOGOS - Todos os direitos reservados.</p>
-    </footer>
+  <section class="gallery">
+    <img src="https://via.placeholder.com/200x120.png?text=Jogo+1" alt="Jogo 1">
+    <img src="https://via.placeholder.com/200x120.png?text=Jogo+2" alt="Jogo 2">
+    <img src="https://via.placeholder.com/200x120.png?text=Jogo+3" alt="Jogo 3">
+    <img src="https://via.placeholder.com/200x120.png?text=Jogo+4" alt="Jogo 4">
+  </section>
+
+  <!-- Repetindo anúncios em diferentes lugares -->
+  <div class="ads-container">
+    <dfn class="adsbyinstal"
+         data-instalad-slot-type="default"
+         data-instalad-slotid="6086"
+         style="display:inline-block;width:320px;height:50px"></dfn>
+    <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
+  </div>
+  <!-- Repita quantas vezes quiser, só não repita o script adsbyinstal.js -->
+
+  <footer>
+    <p>Siga a LM JOGOS nas redes sociais!</p>
+  </footer>
 </body>
 </html>
