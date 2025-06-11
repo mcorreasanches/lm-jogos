@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LM JOGOS</title>
-  <!-- Carrega o script do Instal APENAS UMA VEZ -->
-  <script async src="https://ads.instal.com/servead/adsbyinstal.js"></script>
   <style>
     body {
       margin: 0;
@@ -31,9 +29,6 @@
       cursor: pointer;
       margin-top: 1rem;
     }
-    .ads-container {
-      margin: 2rem auto;
-    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -41,11 +36,49 @@
       gap: 1rem;
       padding: 2rem;
     }
-    .gallery img {
+    .gallery a img {
       width: 200px;
       height: 120px;
       object-fit: cover;
       border-radius: 10px;
+    }
+    .native-ads {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+    .native-ad {
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .native-ad img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .native-ad h4 {
+      margin: 10px 0 5px;
+      font-size: 1rem;
+    }
+    .native-ad p {
+      font-size: 0.9rem;
+    }
+    .native-ad a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: #00ffcc;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
     }
     footer {
       margin-top: 3rem;
@@ -59,38 +92,49 @@
     <h1>LM JOGOS</h1>
     <p>Bem-vindo ao seu universo de jogos!</p>
     <button class="btn-download">Baixar App</button>
-
-    <div class="ads-container">
-      <dfn class="adsbyinstal"
-           data-instalad-slot-type="default"
-           data-instalad-slotid="2009"
-           style="display:inline-block;width:320px;height:250px"></dfn>
-      <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
-    </div>
   </header>
 
-  <div class="ads-container">
-    <dfn class="adsbyinstal"
-         data-instalad-slot-type="default"
-         data-instalad-slotid="6113"
-         style="display:inline-block;width:320px;height:480px"></dfn>
-    <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
-  </div>
-
+  <!-- GALERIA DE JOGOS -->
   <section class="gallery">
-    <img src="https://via.placeholder.com/200x120.png?text=Jogo+1" alt="Jogo 1" />
-    <img src="https://via.placeholder.com/200x120.png?text=Jogo+2" alt="Jogo 2" />
-    <img src="https://via.placeholder.com/200x120.png?text=Jogo+3" alt="Jogo 3" />
-    <img src="https://via.placeholder.com/200x120.png?text=Jogo+4" alt="Jogo 4" />
+    <a href="https://jogo1.com" target="_blank">
+      <img src="https://via.placeholder.com/200x120.png?text=Jogo+1" alt="Jogo 1">
+    </a>
+    <a href="https://jogo2.com" target="_blank">
+      <img src="https://via.placeholder.com/200x120.png?text=Jogo+2" alt="Jogo 2">
+    </a>
+    <a href="https://jogo3.com" target="_blank">
+      <img src="https://via.placeholder.com/200x120.png?text=Jogo+3" alt="Jogo 3">
+    </a>
+    <a href="https://jogo4.com" target="_blank">
+      <img src="https://via.placeholder.com/200x120.png?text=Jogo+4" alt="Jogo 4">
+    </a>
   </section>
 
-  <div class="ads-container">
-    <dfn class="adsbyinstal"
-         data-instalad-slot-type="default"
-         data-instalad-slotid="6086"
-         style="display:inline-block;width:320px;height:50px"></dfn>
-    <script>(adsbyinstal = window.adsbyinstal || []).push({});</script>
-  </div>
+  <!-- ANÚNCIOS NATIVOS INSTAL -->
+  <h2>Anúncios Recomendados</h2>
+  <div class="native-ads" id="nativeAds"></div>
+
+  <script>
+    fetch('http://ads.instal.com/api/v1/servead/native?id=5476&slots_n=4')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('nativeAds');
+        data.ads.forEach(ad => {
+          const div = document.createElement('div');
+          div.className = 'native-ad';
+          div.innerHTML = `
+            <img src="${ad.icon_url}" alt="${ad.title}">
+            <h4>${ad.title}</h4>
+            <p>${ad.description}</p>
+            <a href="${ad.click_url}" target="_blank">Baixar</a>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar anúncios:', error);
+      });
+  </script>
 
   <footer>
     <p>Siga a LM JOGOS nas redes sociais!</p>
